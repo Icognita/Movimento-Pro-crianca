@@ -1,0 +1,30 @@
+// incluindo o arquivo com as variaveis de ambiente
+
+require('dotenv').config()
+//console.log(process.env);
+//exportando as credenciais do banco de dados
+
+module.exports=
+{
+  "development": {
+    "username": process.env.DB_USER,
+    "password": process.env.DB_PASS,
+    "database": process.env.DB_BASE,
+    "host": process.env.DB_HOST,
+    "dialect": process.env.DIALECT
+  },
+  "test": {
+    "username": process.env.DB_USER,
+    "password": process.env.DB_PASS,
+    "database": process.env.DB_BASE,
+    "host": process.env.DB_HOST,
+    "dialect": process.env.DIALECT
+  },
+  "production": {
+    "username": process.env.DB_USER,
+    "password": process.env.DB_PASS,
+    "database": process.env.DB_BASE,
+    "host": process.env.DB_HOST,
+    "dialect": process.env.DIALECT
+  }
+}
