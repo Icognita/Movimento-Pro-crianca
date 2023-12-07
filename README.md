@@ -20,4 +20,9 @@ data base criada
 
 create database movimento_pro_crianca;
 
-npx sequelize-cli model:generate --name User --attributes name:string,login:string,password:string
+ Criar a migration
+### npx sequelize-cli migrations :generate --name User --attributes name:string,login:string,password:string
+
+executar as migrations
+
+### npx sequelize-cli db:migrate   
