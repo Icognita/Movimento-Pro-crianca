@@ -21,8 +21,7 @@ module.exports={
         
         return res.json({ SalvarUsuario})
     }catch (err){
-        return res.json({msg:"Error ao salvar usuario"+err});
-
+        return res.json({msg:"Error ao salvar usuario"+err})
     }
     }
 }

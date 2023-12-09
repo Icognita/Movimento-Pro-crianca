@@ -1,16 +1,23 @@
-const express = require('express')
-const ejs = require('ejs');
-const app = express()
-const router = require('./routes/routes')
+const express = require("express");
+const ejs = require("ejs");
+const app = express();
+const routes = require('./routes/routes')
+PORT = 5656;
 
-//conexao com o bando
-const db = require('./db/models/index');
+ //conexao com o bando
+const db = require('./db/models');
 
+
+app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.json());
-app.use(router)
+app.use(routes);
 
-app.set('view engine', "ejs");
+app.set("view engine", "ejs");
 
-app.listen(565, () => {
-   console.log("servidor rodando na porta5656");
-})
+app.get("/mpc/cadastroAluno", function (req, res) {
+  res.render("../src/view/page/formCadastroAluno.ejs");
+});
+
+app.listen(PORT, () => {
+  console.log("Servidor rodando");
+});

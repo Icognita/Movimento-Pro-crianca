@@ -1,7 +1,7 @@
 // incluindo o arquivo com as variaveis de ambiente
 
 require('dotenv').config()
-//console.log(process.env);
+// console.log(process.env);
 //exportando as credenciais do banco de dados
 
 module.exports=

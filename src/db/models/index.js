@@ -1,11 +1,8 @@
-
-
-
 'use strict';
 
 // incluindo o arquivo com as variaveis de ambiente
 
- require('dotenv').config();
+require('dotenv').config();
 
 const fs = require('fs');
 const path = require('path');
@@ -14,7 +11,7 @@ const process = require('process');
 const basename = path.basename(__filename);
 const env = process.env.NODE_ENV || 'development';
 const config = require(__dirname + '/../config/config.js')[env];
-//cria a o objeto vazio
+//cria a constante com o banco vazio o objeto vazio
 const db = {};
 
 let sequelize;
@@ -25,12 +22,13 @@ if (config.use_env_variable) {
 }
 
 
-  try{
-       console.log(" Conexao com o banco de dados  realizada com sucesso");
-    
-    }catch(error){
-      console.error("Erro: Conexao com o banco de dados não realizada",erro);
-    }
+try {
+  //  await sequelize.authenticate();
+  console.log(" Conexao com o banco de dados  realizada com sucesso");
+
+} catch (error) {
+  console.error("Erro: Conexao com o banco de dados não realizada", erro);
+}
 
 
 
