@@ -1,11 +1,16 @@
 const express = require("express");
 const ejs = require("ejs");
 const app = express();
+const routes = require('./routes/routes')
 PORT = 5656;
 
  //conexao com o bando
 const db = require('./db/models');
 
+
+app.use(bodyParser.urlencoded({extended:true}));
+app.use(express.json());
+app.use(routes);
 
 app.set("view engine", "ejs");
 
