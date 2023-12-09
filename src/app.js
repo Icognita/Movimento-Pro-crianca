@@ -8,7 +8,7 @@ PORT = 5656;
 const db = require('./db/models');
 
 
-app.use(bodyParser.urlencoded({extended:true}));
+//app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.json());
 app.use(routes);
 
