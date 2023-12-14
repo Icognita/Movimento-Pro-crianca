@@ -2,7 +2,7 @@
 const model=require('../db/models')
 const  User=model.User;
 const bcrypt=require('bcrypt')
-// como estamos usando bancal usaremos o passport-local
+// como estamos usando banco local  usaremos o passport-local
 const LocalStrategy= require('passport-local')
 
 
