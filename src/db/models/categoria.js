@@ -14,7 +14,12 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   categoria.init({
-    codigo_categoria: DataTypes.INTEGER,
+    id_categoria: {
+      DataTypes,INTEGER,
+      autoIncrement: true,
+      allowNull:false,
+      primaryKey:true,
+    },
     area_atuacao: DataTypes.STRING
   }, {
     sequelize,
