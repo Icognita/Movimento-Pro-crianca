@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   cursos.init({
-    id_cursos: DataTypes.INTEGER,
+    
     nome_cursos: DataTypes.STRING,
     professor: DataTypes.STRING,
     carga_horaria: DataTypes.STRING,

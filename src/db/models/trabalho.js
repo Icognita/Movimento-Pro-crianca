@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   trabalho.init({
-    id_trabalho: DataTypes.INTEGER,
+    
     descricao_vaga: DataTypes.STRING,
     quantidade_vagas: DataTypes.INTEGER,
     localizacao: DataTypes.STRING,

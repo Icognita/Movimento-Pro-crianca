@@ -2,7 +2,6 @@
 const {
   Model
 } = require('sequelize');
-const categoria = require('./categoria.js');
 
 
 module.exports = (sequelize, DataTypes) => {
@@ -14,75 +13,70 @@ module.exports = (sequelize, DataTypes) => {
     */
     static associate(models) {
       // define association here
+
+      alunos_MPC.belongsTo(models.categoria),{
+        foreignKey:'id_categoria',
+        onDelete:'CASCADE',
+
+      }
+
+
     }
   }
 
   alunos_MPC.init({
-    codigo_aluno: {
-      type: sequelize.INTEGER,
-      autoIncrement: true,
-      allowNull:false,
-      primaryKey:true,
-    },
-    nome: {
-      type: sequelize.STRING
-    },
-    data_nascimento:{
-      type: sequelize.DATE,
-    },
-    telefone: {
-      type: sequelize.STRING,
-    },
-    logradouro: {
-      type: sequelize.STRING,
-    },
-    numero: {
-      type: sequelize.STRING,
-    },
-    cidade: {
-      type: sequelize.STRING,
-    },
-    UF: {
-      type: sequelize.STRING,
-    },
-    pais: {
-      type: sequelize.STRING,
-    },
-    ponto_referencia: {
-      type: sequelize.STRING,
-    },
-    areaAtuacao: {
-      type: sequelize.STRING,
-    },
-    experiencia: {
-      type: sequelize.STRING,
-    },
-    habilidades: {
-      type: sequelize.STRING,
-    },
-    disponibilidade: {
-      type: sequelize.STRING,
-    },
-    localizacao: {
-      type: sequelize.INTEGER,
-    },
-    faixa_etaria: {
-      type: sequelize.STRING,
-    },
-    id_categoria: {
-      type: sequelize.INTEGER,
-      allowNull: false
-    }
-  });
-},
-  alunos_MPC.associate = (models) => {
-    alunos_MPC.belongsTo(models.categoria, {
-      foreignKey: "id_categoria"
-    });
-  };
+   
+    nome:  DataTypes.STRING,
+    data_nascimento:DataTypes.DATE,
+    telefone: DataTypes.STRING,
+    logradouro: DataTypes.STRING,
+    numero:DataTypes.STRING,
+    cidade:DataTypes.STRING,
+    UF: DataTypes.STRING,
+    pais: DataTypes.STRING,
+    ponto_referencia: DataTypes.STRING,
+    areaAtuacao: DataTypes.STRING,
+    experiencia:  DataTypes.STRING,
+    habilidades:DataTypes.STRING,
+    disponibilidade:DataTypes.STRING,
+    localizacao: DataTypes.INTEGER,
+    faixa_etaria:DataTypes.STRING,
+    id_categoria:DataTypes.INTEGER
 
+  },
   {
-    sequelize, modelName; 'alunos_MPC'
-  };
-  return alunos_MPC
+  sequelize,
+  modelName: 'alunos_MPCs',
+});
+return alunos_MPC;
+};
+    
+    
+    
+
+// npx sequelize-cli migrations model:generate --name Aluno --attributes nome:string, dataNascimento:date,  
+// telefone:Interger, logradouro:string, numero:string, cidade:string, UF:string, pais:string, 
+// pontoReferencia:string,areaAtuacao:string,experiencia:string, habilidades:string,localizacao:string,faixaEtaria:string
+
+    
+    
+// npx sequelize-cli model:generate --name Aluno --attributes nome:string,   data_nascimento:string,  
+// telefone:number, logradouro:string, numero:string, cidade:string, UF:string, pais:string, 
+// ponto_referencia:string,areaAtuacao:string, experiencia:string, habilidades:string,l ocalizacao:Interger,faixa_etaria:string
+
+    
+    
+    
+    
+    
+    
+ 
+  
+
+
+
+
+
+
+
 

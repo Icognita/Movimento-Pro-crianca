@@ -3,7 +3,7 @@
 module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.createTable('alunos_MPCs', {
-      id_aluno: {
+      id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
