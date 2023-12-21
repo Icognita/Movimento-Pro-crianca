@@ -14,11 +14,11 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
 
-      alunos_MPC.belongsTo(models.categoria),{
+      alunos_MPC.belongsTo(models.categoria,{ // Correção de sintaxe aqui
         foreignKey:'id_categoria',
         onDelete:'CASCADE',
 
-      }
+      })
 
 
     }
@@ -45,13 +45,11 @@ module.exports = (sequelize, DataTypes) => {
 
   },
   {
-  sequelize,
-  modelName: 'alunos_MPCs',
-});
-return alunos_MPC;
+    sequelize,
+    modelName: 'alunos_MPC', //Correção do erro que não retornava o model
+  });
+  return alunos_MPC;
 };
-    
-    
     
 
 // npx sequelize-cli migrations model:generate --name Aluno --attributes nome:string, dataNascimento:date,  
@@ -63,20 +61,3 @@ return alunos_MPC;
 // npx sequelize-cli model:generate --name Aluno --attributes nome:string,   data_nascimento:string,  
 // telefone:number, logradouro:string, numero:string, cidade:string, UF:string, pais:string, 
 // ponto_referencia:string,areaAtuacao:string, experiencia:string, habilidades:string,l ocalizacao:Interger,faixa_etaria:string
-
-    
-    
-    
-    
-    
-    
- 
-  
-
-
-
-
-
-
-
-
