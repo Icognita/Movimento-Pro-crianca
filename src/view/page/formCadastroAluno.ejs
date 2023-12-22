@@ -9,211 +9,78 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/Movimento-Pro-crianca/src/public/style.css">
   </head>
 
   <body>
     <main>
       <h1>Cadastre-se</h1>
-      <p> Preencha os campos a seguir para que você possa se cadastrar em um curso ou vagas de emprego/estágio!</p>
-      <form action="/cadastroAluno" method="POST">
+      <p>Preencha os campos a seguir para que você possa se cadastrar em um curso ou vagas de emprego/estágio!</p>
+      <form action="/cadastro" method="POST">
         <fieldset>
-          <legend><span> Dados pessoais</span></legend>
+          <legend><span>Dados pessoais</span></legend>
           <div class="form-row-1">
             <div class="row g-2">
               <div class="form-group col-md-2">
-                <label for="inputNome">Nome:</label>
-                <input type="text" id="inputNome" class="form-control" placeholder="Informe seu nome completo" required>
-              </div>
-              <div class="form-group col-md-1">
-                <label for="inputCPF">CPF:</label>
-                <input type="text" class="form-control" id="inputCPF" placeholder="Informe seu cpf" required>
-              </div>
-              <div class="form-group col-md-3">
-                <label for="inputDadosResponsavel">Nome do responsável:</label>
-                <input type="text" class="form-control" id="inputDadosResponsavel" placeholder="Informe dados do representante legal, caso seja menor de idade">
-              </div>
-
-              <div class="form-group col-md-2">
-                <label for="inputEmail">Email:</label>
-                <input type="email" class="form-control" id="inputEmail" placeholder="exemplo@email.com" required>
+                <input type="text" name="inputNome" id="inputNome" class="form-control" placeholder="Informe seu nome completo" required>
               </div>
               <div class="form-group col-md-2">
-                <label for="inputtel">Celular:</label>
-                <input type="tel" class="form-control" id="inputel" placeholder=" (XX)XXXXX-XXXX">
+                <input type="tel" class="form-control" name="inpuTel" id="inpuTel" placeholder="Informe seu telefone: (XX)XXXXX-XXXX">
               </div>
-
-            </div>
-            <br>
-            <div class="row g-2">
-              <div class="form-group col-md-1">
-                <label for="inputDataNascimento">Data de Nascimento:</label>
-                <input type="date" class="form-control" id="inputDataNascimento" placeholder="Informe sua data de nascimento" required>
+              <div class="col-sm-4">
+                <input type="text" class="form-control" name="inputFaixaEtaria" id="inputFaixaEtaria" placeholder="Faixa Etária" arial-label="faixaEtaria" required>
               </div>
-              <div class="input-group col">
-                <label class="input-group-text" for="inputGroupSelecFaixaEtaria">Qual sua faixa etária?</label>
-                <select class="form-select" id="inputGroupSelectFaixaEtaria">
-                  <option selected>Escolha uma das opções</option>
-                  <option value="5-11 anos">5-11 anos</option>
-                  <option value="12-17 anos">12-17 anos</option>
-                  <option value="18-30 anos"> 18-30 anos</option>
-                  <option value="+30 anos"> +30 anos</option>
-                </select>
-              </div>
-            </div>
+              <br>
         </fieldset>
-
-        <div class="row g-4">
-          <div class="form-group col-md-4">
-            <label for="inputAddress">Endereço:</label>
-            <input type="text" class="form-control" id="inputAddress" placeholder="Informe o logradouro" required>
-          </div>
-          <div class="form-group col-md-1">
-            <label for="inputBairro">Bairro:</label>
-            <input type="text" class="form-control" id="inputBairro" placeholder="Informe o bairro" required>
-          </div>
-          <div class="form-group col-md-1">
-            <label for="inputNumero">Número:</label>
-            <input type="text" class="form-control" id="inputNumero" placeholder="Número" required>
-          </div>
-          <div class="form-group col-md-2">
-            <label for="inputComplemento">Complemento:</label>
-            <input type="text" class="form-control" id="inputComplemento" placeholder="Apartamento, casa, sítio...">
-          </div>
-        </div>
-        <div class="row g-3">
-          <label for="inputCidade">Cidade:</label>
-          <div class="col-sm-2">
-            <input type="text" class="form-control" id="inputCidade" placeholder="Cidade" arial-label="cidade" required>
-          </div>
-          <div class="form-group col-sm-2">
-            <select id="inputEstado" class="form-control" required>
-              <option selected hidden>Escolha o Estado...</option>
-              <option value="AC">Acre</option>
-              <option value="AL">Alagoas</option>
-              <option value="AP">Amapá</option>
-              <option value="AM">Amazonas</option>
-              <option value="BA">Bahia</option>
-              <option value="CE">Ceará</option>
-              <option value="DF">Distrito Federal</option>
-              <option value="ES">Espírito Santo</option>
-              <option value="GO">Goiás</option>
-              <option value="MA">Maranhão</option>
-              <option value="MT">Mato Grosso</option>
-              <option value="MS">Mato Grosso do Sul</option>
-              <option value="MG">Minas Gerais</option>
-              <option value="PA">Pará</option>
-              <option value="PB">Paraíba</option>
-              <option value="PR">Paraná</option>
-              <option value="PE">Pernambuco</option>
-              <option value="PI">Piauí</option>
-              <option value="RJ">Rio de Janeiro</option>
-              <option value="RN">Rio Grande do Norte</option>
-              <option value="RS">Rio Grande do Sul</option>
-              <option value="RO">Rondônia</option>
-              <option value="RR">Roraima</option>
-              <option value="SC">Santa Catarina</option>
-              <option value="SP">São Paulo</option>
-              <option value="SE">Sergipe</option>
-              <option value="TO">Tocantins</option>
-            </select>
-          </div>
-          <div class="col-sm-1">
-            <input type="text" class="form-control" id="inputPais" placeholder="País(abreviação)" aria-label="pais" required>
-          </div>
-        </div>
-        <br>
-        <div class="row g-3">
-          <div class="form-group col-md-1">
-            <label for="inputEstrangeiro">Se for estrangeiro:</label>
-            <input type="text" class="form-control" id="inputEstrangeiro" placeholder="Informe o Estado">
-          </div>
-          <div class="form-group col-md-1">
-            <label for="inputCep">CEP:</label>
-            <input type="text" class="form-control" id="inputCep" placeholder="Informe o CEP" required>
-          </div>
-          <div class="form-group col-md-2">
-            <label for="inputPontoReferencia">Ponto de referência:</label>
-            <input type="text" class="form-control" id="inputPontoReferencia" placeholder="Informe o ponto de referência">
-          </div>
-        </div>
-        <br>
         <fieldset>
-          <legend> Dados Complementares</legend>
-          <span>Coloque o seu currículo em PDF:</span>
-          <div class="input-group mb">
-            <input type="file" class="form-control" id="inputGroupCurriculo">
-            <label class="input-group-text" for="inputGroupCurriculo">Upar</label>
+          <legend><span>Endereço</span></legend>
+          <div class="form-group col-md-4">
+            <input type="text" class="form-control" name="inputLogradouro" id="inputLogradouro" placeholder="Informe o logradouro" required>
+          </div>
+          <div class="row g-3">
+            <div class="col-sm-2">
+              <input type="text" class="form-control" name="inputNumero" id="inputNumero" placeholder="Numero" arial-label="Numero" required>
+            </div>
+            <div class="col-sm-3">
+              <input type="text" class="form-control" name="inputCidade" id="inputCidade" placeholder="Cidade" arial-label="Cidade" required>
+            </div>
+            <div class="col-sm-2">
+              <input type="text" class="form-control" name="inputUF" id="inputUF" placeholder="Estado" arial-label="Estado" required>
+            </div>
+            <div class="col-sm-2">
+              <input type="text" class="form-control" name="inputPais" id="inputPais" placeholder="Pais" arial-label="Pais" required>
+            </div>
           </div>
           <br>
-
-          <div class="input-group col- md-1">
-            <label class="input-group-text" for="inputGroupSelectEscolaridade">Qual sua escolaridade?</label>
-            <select class="form-select" id="inputGroupSelectEscolaridade">
-              <option value="">Selecione sua escolaridade</option>
-              <option value="fundamental">Fundamental</option>
-              <option value="medio">Médio</option>
-              <option value="superior">Superior</option>
-              <option value="Pos">Pos-Graduação</option>
-            </select>
+          <div class="form-group col-md-2">
+            <input type="text" class="form-control" name="inputPontoReferencia" id="inputPontoReferencia" placeholder="Informe o ponto de referência">
           </div>
-          <br>
-          <div class="input-group col- md-1">
-            <label class="input-group-text" for="inputGroupSelectLocalizacao">Escolha sua unidade a partir da sua localizacao</label>
-            <select class="form-select" id="inputGroupSelectLocalizacao">
-              <option value="">Selecione uma unidade</option>
-              <option value="Piedade">Piedade</option>
-              <option value="Recife Antigo">Recife Antigo</option>
-              <option value="Coelho">Coelho</option>
-            </select>
-          </div>
-          <br>
-          <label>Qual sua area de interesse/atuacao?</label>
-          <div class=" form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="Tecnologia">
-            <label class="form-check-label" for="inlineCheckbox1">Tecnologia</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="Esportes">
-            <label class="form-check-label" for="inlineCheckbox2">Esportes</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="Artes">
-            <label class="form-check-label" for="inlineCheckbox3"> Artes </label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="Administrativo">
-            <label class="form-check-label" for="inlineCheckbox4"> Administrativo</label>
-          </div>
-          <br>
-          <label>Disponibilidade:</label>
-          <div class=" form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" id="inlineCheckboxTurnoM" value="Tecnologia">
-            <label class="form-check-label" for="inlineCheckboxTurnoM">Manhã</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" id="inlineCheckboxTurnoTarde" value="Tarde">
-            <label class="form-check-label" for="inlineCheckboxTurnoTarde">Tarde</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" id="inlineCheckboxTurnoNoite" value="Noite">
-            <label class="form-check-label" for="inlineCheckboxTurnoNoite"> Noite </label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" id="inlineCheckboxTodosTurnos" value="Todos Turnos">
-            <label class="form-check-label" for="inlineCheckboxTodosTurnos"> Disponibilidade em todos os horários</label>
-          </div>
-          <br>
-
-          <br>
-          <div class="mb-10">
-            <label for="Experiência" class="form-label">Experiência:</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="10"></textarea>
-          </div>
-          <div class="mb-5">
-            <label for="Experiência" class="form-label">Habilidades:</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary">Enviar</button>
+        </fieldset>
+        <fieldset>
+          <legend><span>Dados Complementares<span></legend>
+          <div class="row g-3">
+            <div class="col-sm-2">
+              <input type="text" class="form-control" name="inputLocalizacao" id="inputLocalizacao" placeholder="Unidade" arial-label="unidade" required>
+            </div>
+            <div class="row g-3">
+              <div class="col-sm-4">
+                <input type="text" class="form-control" name="inputAreaAtuacao" id="inputAreaAtuacao" placeholder="Área de Atuação" arial-label="areaAtuacao" required>
+              </div>
+              <br>
+              <div class="row g-3">
+                <div class="col-sm-6">
+                  <input type="text" class="form-control" name="inputDisponibilidade" id="inputDisponibilidade" placeholder="Informe sua disponibilidade" arial-label="disponibilidade" required>
+                </div>
+                <br>
+                <div class="mb-10">
+                  <label for="Experiencia" class="form-label">Experiência:</label>
+                  <textarea class="form-control" name="inputExp" id="inputExp" rows="10"></textarea>
+                </div>
+                <div class="mb-5">
+                  <label for="habilidades" class="form-label">Habilidades:</label>
+                  <textarea class="form-control" name="inputHabilidades" id="inputHabilidades" rows="5"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar</button>
         </fieldset>
       </form>
     </main>
