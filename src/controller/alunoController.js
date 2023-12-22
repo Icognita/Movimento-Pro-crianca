@@ -43,7 +43,12 @@ class AlunoController {
             res.status(500).json({ error: error.message });
         }
     }
+    telaCadastro(req, res) { //Tela de cadastro do aluno
+        res.render('page/formCadastroAluno') //Definindo qual arquivo ejs
+    }
 }
+
+
 
 const alunoControllerInstance = new AlunoController();
 module.exports = alunoControllerInstance;

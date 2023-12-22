@@ -15,8 +15,13 @@
     <main>
       <h1>Cadastre-se</h1>
       <p> Preencha os campos a seguir para que você possa se cadastrar em um curso ou vagas de emprego/estágio!</p>
-      <form action="/cadastroAluno" method="POST">
-        <fieldset>
+      <form action="/cadastrar" method="post">
+        <div class="form-group col-md-2">
+          <label for="nome">Nome:</label>
+          <input type="text" class="form-control" name="nome" placeholder="Informe seu nome completo" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+        <!-- <fieldset>
           <legend><span> Dados pessoais</span></legend>
           <div class="form-row-1">
             <div class="row g-2">
@@ -214,7 +219,7 @@
             <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
           </div>
           <button type="submit" class="btn btn-primary">Enviar</button>
-        </fieldset>
+        </fieldset> -->
       </form>
     </main>
   </body>

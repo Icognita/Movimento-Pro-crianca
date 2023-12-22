@@ -14,6 +14,7 @@ app.use(express.json());
 app.use(routes);
 
 app.set("view engine", "ejs");
+app.set('views', 'src/view'); // Configurando ejs
 
 app.get("/mpc/cadastroAluno", function (req, res) {
   res.render("../src/view/page/formCadastroAluno.ejs");
