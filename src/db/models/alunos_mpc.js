@@ -19,18 +19,16 @@ module.exports = (sequelize, DataTypes) => {
         onDelete:'CASCADE',
 
       })
-
-
     }
   }
 
-  alunos_MPC.init({
+  alunos_MPC.init({ // Alterações colocando novas colunas e alterando tipo de dado
    
     nome:  DataTypes.STRING,
     data_nascimento:DataTypes.DATE,
     telefone: DataTypes.STRING,
     logradouro: DataTypes.STRING,
-    numero:DataTypes.STRING,
+    numero:DataTypes.INTEGER,
     cidade:DataTypes.STRING,
     UF: DataTypes.STRING,
     pais: DataTypes.STRING,
@@ -41,8 +39,10 @@ module.exports = (sequelize, DataTypes) => {
     disponibilidade:DataTypes.STRING,
     localizacao: DataTypes.INTEGER,
     faixa_etaria:DataTypes.STRING,
-    id_categoria:DataTypes.INTEGER
-
+    CEP:DataTypes.STRING,
+    CPF:DataTypes.STRING,
+    Bairro:DataTypes.STRING,
+    unidade_pro_crianca:DataTypes.STRING
   },
   {
     sequelize,
@@ -50,14 +50,3 @@ module.exports = (sequelize, DataTypes) => {
   });
   return alunos_MPC;
 };
-    
-
-// npx sequelize-cli migrations model:generate --name Aluno --attributes nome:string, dataNascimento:date,  
-// telefone:Interger, logradouro:string, numero:string, cidade:string, UF:string, pais:string, 
-// pontoReferencia:string,areaAtuacao:string,experiencia:string, habilidades:string,localizacao:string,faixaEtaria:string
-
-    
-    
-// npx sequelize-cli model:generate --name Aluno --attributes nome:string,   data_nascimento:string,  
-// telefone:number, logradouro:string, numero:string, cidade:string, UF:string, pais:string, 
-// ponto_referencia:string,areaAtuacao:string, experiencia:string, habilidades:string,l ocalizacao:Interger,faixa_etaria:string
