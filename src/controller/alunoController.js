@@ -1,48 +1,51 @@
 const model = require('../db/models')
 const aluno = model.alunos_MPC
-const validacaoNome = require('../utils/validacoes')
+const validacaoNome = require('../middlewares/validacoes_cadastro_aluno')
 
 class AlunoController {
     async criarAluno(req, res){
         try{
-            validacaoNome(req, res, async() => { //Utilizando a função para validação
-                const {
-                    nome,
-                    data_nascimento,
-                    telefone,
-                    logradouro,
-                    numero,
-                    cidade,
-                    UF,
-                    pais,
-                    ponto_referencia,
-                    areaAtuacao,
-                    experiencia,
-                    habilidades,
-                    disponibilidade,
-                    localizacao,
-                    faixa_etaria
-                } = req.body;
-                const salvarAluno = await aluno.create({
-                                                    nome,
-                                                    data_nascimento,
-                                                    telefone,
-                                                    logradouro,
-                                                    numero,
-                                                    cidade,
-                                                    UF,
-                                                    pais,
-                                                    ponto_referencia,
-                                                    areaAtuacao,
-                                                    experiencia,
-                                                    habilidades,
-                                                    disponibilidade,
-                                                    localizacao,
-                                                    faixa_etaria
-                                                });
-                                                res.status(201).json({ aluno: salvarAluno, message: 'Aluno cadastrado com sucesso' });
-                                            })
-            
+            const {
+                nome,
+                data_nascimento,
+                telefone,
+                logradouro,
+                numero,
+                cidade,
+                UF,
+                pais,
+                ponto_referencia,
+                areaAtuacao,
+                experiencia,
+                habilidades,
+                disponibilidade,
+                unidade_pro_crianca,
+                faixa_etaria,
+                CEP,
+                CPF,
+                Bairro
+            } = req.body;
+            const salvarAluno = await aluno.create({
+                                                nome,
+                                                data_nascimento,
+                                                telefone,
+                                                logradouro,
+                                                numero,
+                                                cidade,
+                                                UF,
+                                                pais,
+                                                ponto_referencia,
+                                                areaAtuacao,
+                                                experiencia,
+                                                habilidades,
+                                                disponibilidade,
+                                                unidade_pro_crianca,
+                                                faixa_etaria,
+                                                CEP,
+                                                CPF,
+                                                Bairro
+                                            });
+                                            res.status(201).json({ aluno: salvarAluno, message: 'Aluno cadastrado com sucesso' });
         } catch(error) {
             res.status(500).json({ error: error.message });
         }
