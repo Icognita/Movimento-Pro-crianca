@@ -32,17 +32,15 @@ module.exports = (sequelize, DataTypes) => {
     cidade:DataTypes.STRING,
     UF: DataTypes.STRING,
     pais: DataTypes.STRING,
-    ponto_referencia: DataTypes.STRING,
     areaAtuacao: DataTypes.STRING,
     experiencia:  DataTypes.STRING,
     habilidades:DataTypes.STRING,
-    disponibilidade:DataTypes.STRING,
-    localizacao: DataTypes.INTEGER,
-    faixa_etaria:DataTypes.STRING,
+    idade:DataTypes.STRING,
     CEP:DataTypes.STRING,
     CPF:DataTypes.STRING,
     Bairro:DataTypes.STRING,
-    unidade_pro_crianca:DataTypes.STRING
+    inform_adcionais:DataTypes.STRING,
+    cursos_extras:DataTypes.STRING
   },
   {
     sequelize,

@@ -14,16 +14,15 @@ class AlunoController {
                 cidade,
                 UF,
                 pais,
-                ponto_referencia,
                 areaAtuacao,
                 experiencia,
                 habilidades,
-                disponibilidade,
-                unidade_pro_crianca,
-                faixa_etaria,
+                idade,
                 CEP,
                 CPF,
-                Bairro
+                Bairro,
+                inform_adcionais,
+                cursos_extras
             } = req.body;
             const salvarAluno = await aluno.create({
                                                 nome,
@@ -34,16 +33,15 @@ class AlunoController {
                                                 cidade,
                                                 UF,
                                                 pais,
-                                                ponto_referencia,
                                                 areaAtuacao,
                                                 experiencia,
                                                 habilidades,
-                                                disponibilidade,
-                                                unidade_pro_crianca,
-                                                faixa_etaria,
+                                                idade,
                                                 CEP,
                                                 CPF,
-                                                Bairro
+                                                Bairro,
+                                                inform_adcionais,
+                                                cursos_extras
                                             });
                                             res.status(201).json({ aluno: salvarAluno, message: 'Aluno cadastrado com sucesso' });
         } catch(error) {
@@ -54,8 +52,6 @@ class AlunoController {
         res.render('page/formCadastroAluno') //Definindo qual arquivo ejs
     }
 }
-
-
 
 const alunoControllerInstance = new AlunoController();
 module.exports = alunoControllerInstance;
