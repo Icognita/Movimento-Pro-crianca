@@ -14,11 +14,10 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
 
-      alunos_MPC.belongsTo(models.categoria,{ // Correção de sintaxe aqui
-        foreignKey:'id_categoria',
-        onDelete:'CASCADE',
-
-      })
+      // alunos_MPC.belongsTo(models.categoria,{ // Correção de sintaxe aqui
+      //   foreignKey:'id_categoria',
+      //   onDelete:'CASCADE',
+      // })
     }
   }
 

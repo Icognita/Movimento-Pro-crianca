@@ -13,9 +13,8 @@ function validacoes(req, res, next) { //Função para as validações de dados d
         'CPF',
         'CEP',
         'Bairro',
-        'idade',
-        'habilidades',
-        'areaAtuacao'
+        'inform_adcionais',
+        'cursos_extras'
     ];
     camposObrigatorios.forEach(campo => {
         if (!req.body[campo]) {
@@ -33,15 +32,6 @@ function validacoes(req, res, next) { //Função para as validações de dados d
             erros.push({ Texto: "O nome não pode conter números ou caracteres especiais" });
         }
     }
-
-    // Validação específica para o campo 'idade'
-    if (req.body.idade) {
-        const regexIdade = /^\d+$/;
-        if (!regexIdade.test(req.body.idade) || parseInt(req.body.idade, 10) < 16 || parseInt(req.body.idade, 10) > 100) {
-            erros.push({ Texto: 'A idade deve ser um número inteiro entre 16 e 100' });
-        }
-    }
-
 
     // Validação específica para o campo 'logradouro'
     if (req.body.logradouro) {
@@ -61,6 +51,13 @@ function validacoes(req, res, next) { //Função para as validações de dados d
             }
         }
     });
+
+    if (req.body.idade) {
+        const regexIdade = /^\d+$/;
+        if (!regexIdade.test(req.body.idade) || parseInt(req.body.idade, 10) < 16 || parseInt(req.body.idade, 10) > 100) {
+            erros.push({ Texto: 'A idade deve ser um número inteiro entre 16 e 100' });
+        }
+    }
 
     // Validação específica para o campo 'UF'
     if (req.body.UF) {
