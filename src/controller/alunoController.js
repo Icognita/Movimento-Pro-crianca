@@ -1,6 +1,7 @@
 const model = require('../db/models')
 const aluno = model.alunos_MPC
 const validacaoNome = require('../middlewares/validacoes_cadastro_aluno')
+const { Op } = require('sequelize');
 
 class AlunoController {
     async criarAluno(req, res){
@@ -70,13 +71,13 @@ class AlunoController {
           res.status(500).json({ error: 'Erro ao deletar aluno.' });
         }
     }
-    async getAllAlunos(req, res) {
+    async buscaDeAlunos(req, res) {
         try {
-          const allAlunos = await aluno.findAll();
-          res.json(allAlunos);
+          const buscarAlunos = await aluno.findAll();
+          res.json(buscarAlunos);
         } catch (error) {
           console.error(error);
-          res.status(500).json({ error: 'Erro interno do servidor' });
+          res.status(500).json({ error: 'Erro ao buscar todos os alunos' });
         }
     }
     async atualizarAluno(req, res) {
@@ -131,10 +132,8 @@ class AlunoController {
           }
         } catch (error) {
           return res.status(500).json({ error: error.message });
-        }
-        
-      }
-            
+        }   
+    }      
 }
 
 const alunoControllerInstance = new AlunoController();
