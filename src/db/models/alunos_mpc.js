@@ -2,6 +2,7 @@
 const {
   Model
 } = require('sequelize');
+const categoria = require('./categoria');
 
 
 module.exports = (sequelize, DataTypes) => {
@@ -14,14 +15,18 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
 
-      alunos_MPC.belongsTo(models.categoria),{
-        foreignKey:'id_categoria',
-        onDelete:'CASCADE',
-
-      }
-
+      // categoria.belongsTo(models.alunos_MPC,{
+      //   foreignKey:'id_categoria',
+      //   alloowNull:false,
+      //   onDelete:'CASCADE',
+      // })
 
     }
+
+
+      
+
+
   }
 
   alunos_MPC.init({
@@ -41,7 +46,8 @@ module.exports = (sequelize, DataTypes) => {
     disponibilidade:DataTypes.STRING,
     localizacao: DataTypes.INTEGER,
     faixa_etaria:DataTypes.STRING,
-    id_categoria:DataTypes.INTEGER
+    id_categoria:DataTypes.STRING
+
 
   },
   {

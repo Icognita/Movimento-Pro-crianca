@@ -10,7 +10,7 @@ module.exports = {
      * fx v
      */
 
-     await queryInterface.addColumn('categoria','alunos_MPC', Sequelize.INTEGER );
+     await queryInterface.addColumn('categoria','id_aluno', Sequelize.INTEGER );
   },
 
   async down (queryInterface, Sequelize) {
@@ -20,6 +20,6 @@ module.exports = {
      * Example:
      * await queryInterface.dropTable('users');
      */
-    await queryInterface.removeColumn('categoria','alunos_MPC');
+     await queryInterface.removeColumn('categoria',' id_aluno')
   }
 };

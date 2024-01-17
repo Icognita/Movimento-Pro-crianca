@@ -1,3 +1,29 @@
 <%- include('../partials/header'); %>
 
+<section class="container my-5">
+    <form action="/register" method="POST">
+        <div>
+            <% if (error) { %>
+                <p class="err-msg">Ulogin alredy exists</p>
+                <% } %>
+
+                    <h1>Register</h1>
+        </div>
+        <div class="form-group">
+            <label for="ulogin">login</label>
+            <input class="form-control" type="text" name="ulogin" id="ulogin" placeholder="Enter your ulogin" required />
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input class="form-control" type="password" name="password" id="password" placeholder="Enter your password" required />
+        </div>
+        
+        <div>
+            <input class="btn btn-secondary" type="submit" value="Create" />
+        </div>
+    </form>
+</section>
+</main>
+
+
 <%- include('../partials/footer'); %>
