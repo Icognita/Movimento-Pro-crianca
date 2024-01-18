@@ -14,13 +14,18 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   trabalho.init({
-    
+    id_trabalho: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true,
+    },
     descricao_vaga: DataTypes.STRING,
-    quantidade_vagas: DataTypes.INTEGER,
-    localizacao: DataTypes.STRING,
-    carga_horaria: DataTypes.STRING,
-    habilidades: DataTypes.STRING,
-    data_inicio: DataTypes.DATE
+    cidade_vaga: DataTypes.STRING,
+    nome_vaga: DataTypes.STRING,
+    empresa_vaga: DataTypes.STRING,
+    requisitos_vaga: DataTypes.STRING,
+    modalidade: DataTypes.STRING,
+    beneficios: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'trabalho',

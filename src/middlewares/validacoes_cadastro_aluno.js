@@ -35,7 +35,7 @@ function validacoes(req, res, next) { //Função para as validações de dados d
 
     // Validação específica para o campo 'logradouro'
     if (req.body.logradouro) {
-        const regexLogradouro = /^[a-zA-ZáàâãéèêíïóôõöúçñÁÀÂÃÉÈÊÍÏÓÔÕÖÚÇÑ']+$/;
+        const regexLogradouro = /^[a-zA-ZáàâãéèêíïóôõöúçñÁÀÂÃÉÈÊÍÏÓÔÕÖÚÇÑ' ]+$/;
         if (!regexLogradouro.test(req.body.logradouro) || req.body.logradouro.length > 80) {
             erros.push({ Texto: 'Logradouro deve conter apenas letras e acentos, com no máximo 80 caracteres' });
         }
