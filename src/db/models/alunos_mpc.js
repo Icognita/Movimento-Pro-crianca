@@ -18,7 +18,6 @@ module.exports = (sequelize, DataTypes) => {
       // alunos_MPC.belongsTo(models.categoria,{ // Correção de sintaxe aqui
       //   foreignKey:'id_categoria',
       //   onDelete:'CASCADE',
-
       // })
     }
   }
