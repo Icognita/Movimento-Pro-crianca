@@ -8,31 +8,31 @@ const controllerLogin=require('../controller/login')
 const validarCadastroAluno = require('../middlewares/validacoes_cadastro_aluno')
 
 
-//login
+// cadastar UsuarioLogin
 router.post('/Criar/Usuario',controllerUsuario.CriarUsuario)
-// router.post('/cadastrar', validarCadastroAluno, alunoController.criarAluno)  // Rota de cadastro
-router.get('/cadastrar', alunoController.telaCadastro)
+//Login
 router.post('/login',controllerLogin.login)
+router.get('/login/Sucesso',controllerLogin.loginSucess)
+router.get('/login/Fracasso',controllerLogin.loginFailure)
+
+
+
 //verificar autenticação
-
-<<<<<<< HEAD
-
-module.exports=router;
-const routes = express.Router();
-=======
->>>>>>> bf66039f9e2d19915442297d093a1f1194e7c593
-
-
-
-routes.get("/home", (req, res) => {
-    res.send("Funcionado ...")
-})
 
 
 //usuario
+router.get('/cadastrar', alunoController.telaCadastro)
+router.post('/cadastrar', validarCadastroAluno, alunoController.criarAluno)  // Rota de cadastro
 router.post('/Criar/Usuario',controllerUsuario.CriarUsuario)
 router.get('/cadastrar', alunoController.telaCadastro)
 router.post('/cadastrar', validarCadastroAluno, alunoController.criarAluno)  // Rota de cadastro
+
+
+// routes.get("/", (req, res) => {
+//    return res.render('page/home')
+// })
+
+
 
 
 module.exports = router

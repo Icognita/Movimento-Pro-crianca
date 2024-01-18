@@ -20,6 +20,7 @@ module.exports={
         SalvarUsuario.senha_hash=undefined
         
         return res.json({ SalvarUsuario})
+       
     }catch (err){
         return res.json({msg:"Error ao salvar usuario"+err})
     }

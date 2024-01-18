@@ -39,15 +39,13 @@ module.exports= function(passport){
 
     }));
     //validação de seguarança
-    passport.seializerUser((user, done) => {
+    passport.seializeUser((user, done) => {
         done(null, user.id);
     });
     //para saber se o usuario realmente existe
-    passport.deserializerUser((id, done) => {
+    passport.deserializeUser((id, done) => {
         User.findOne({
-            where: {
-                id: id
-            }
+            where: {  id: id }
         }).then((res) => {
 
             if (res) {
