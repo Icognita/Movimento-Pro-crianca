@@ -1,28 +1,24 @@
-# Pro-crianca
+# Projeto Integrador CursoSoftex
 
-## dependencias já instaladas
-   "bcrypt": "^5.1.1",
-    "body-parser": "^1.20.2",
-    "dotenv": "^16.3.1",
-    "ejs": "^3.1.9",
-    "express": "^4.18.2",
-    "mysql2": "^3.6.5",
-    "nodemon": "^3.0.1",
-    "passport": "^0.6.0",
-    "passport-local": "^1.0.0",
-    "sequelize": "^6.35.1"
+## Objetivo
+Desenvolvimento de uma aplicação Back-end de Cadastro para o banco de talentos do **Movimento Pró-Criança**. Criar uma aplicação web que permita ao Movimento Pró-Criança gerenciar um banco de talentos, onde poderemos cadastrar nossos beneficiários (alunos), para encaminhá-los para cursos e oportunidades no mercado de trabalho.
 
-    sequelize cli
-    npm install --save-dev sequelize-cli
-    npx sequelize-cli init
-##
-data base criada
+## Ferramentas
+- Node.js  
+- JavaScript  
+- MySQL  
+- ORM  
+- Sequelize CLI  
 
-create database movimento_pro_crianca;
+## Páginas  🚀
+### ✅ Funcionalidades já implementadas:
+- Login do usuário  
+- Cadastro do aluno  
+- Cadastro das vagas  
+- CRUD de aluno  
+- CRUD de vagas  
+- Busca avançada  
 
- Criar a migration
-### npx sequelize-cli migrations :generate --name User --attributes name:string,login:string,password:string
+---
 
-executar as migrations
 
-### npx sequelize-cli db:migrate   
